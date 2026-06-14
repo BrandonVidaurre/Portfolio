@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brandon Vidaurre — Résumé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#1a1a1a;
+  --muted:#595959;
+  --blue:#1f4e79;
+  --rule:#2e75b6;
+  --faint:#e3e9f0;
+  --paper:#ffffff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{
+  background:#3a3d44;
+  color:var(--ink);
+  font-family:"Source Sans 3",system-ui,-apple-system,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---- on-screen toolbar ---- */
+.toolbar{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 22px;
+  background:rgba(20,22,26,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.toolbar__back,.toolbar__btn{
+  font-family:"Source Sans 3",sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:0.04em;
+  text-decoration:none;cursor:pointer;
+}
+.toolbar__back{color:#9aa3b2;display:inline-flex;align-items:center;gap:7px;}
+.toolbar__back:hover{color:#fff;}
+.toolbar__btn{
+  color:#fff;background:var(--blue);
+  border:1px solid var(--rule);
+  padding:9px 18px;border-radius:6px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background 120ms;
+}
+.toolbar__btn:hover{background:#2a6098;}
+
+/* ---- page (US Letter) ---- */
+.sheet{
+  width:8.5in;
+  min-height:11in;
+  margin:28px auto;
+  padding:0.62in 0.7in 0.6in;
+  background:var(--paper);
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* ---- header ---- */
+.r-name{
+  font-family:"Source Serif 4",Georgia,serif;
+  text-align:center;
+  font-size:30px;font-weight:700;letter-spacing:0.02em;
+  color:var(--blue);
+  line-height:1.1;
+}
+.r-role{
+  text-align:center;
+  color:var(--muted);
+  font-size:13.5px;
+  margin-top:5px;
+}
+.r-contact{
+  text-align:center;
+  font-size:12.5px;
+  margin-top:7px;
+  color:var(--muted);
+}
+.r-contact a{color:var(--blue);text-decoration:none;}
+.r-contact a:hover{text-decoration:underline;}
+.r-contact .sep{color:#b9c2cd;padding:0 7px;}
+
+/* ---- section ---- */
+.r-sec{margin-top:18px;}
+.r-sec__h{
+  font-family:"Source Sans 3",sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--blue);
+  padding-bottom:3px;
+  border-bottom:1.5px solid var(--rule);
+  margin-bottom:9px;
+}
+.r-sec p{font-size:13.5px;line-height:1.55;}
+
+/* skills grid */
+.r-skills{display:grid;gap:5px;}
+.r-skill{font-size:13px;line-height:1.5;}
+.r-skill b{color:var(--ink);}
+
+/* experience */
+.r-job{margin-bottom:13px;}
+.r-job:last-child{margin-bottom:0;}
+.r-job__top{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+}
+.r-job__title{font-size:14.5px;font-weight:700;color:var(--ink);}
+.r-job__date{font-size:12.5px;color:var(--muted);white-space:nowrap;}
+.r-job__org{font-size:13px;color:var(--muted);font-style:italic;margin:1px 0 6px;}
+.r-job ul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.r-job li{
+  position:relative;padding-left:15px;font-size:13px;line-height:1.5;
+}
+.r-job li::before{
+  content:"";position:absolute;left:2px;top:8px;
+  width:4px;height:4px;border-radius:50%;background:var(--rule);
+}
+
+/* projects */
+.r-proj{margin-bottom:10px;}
+.r-proj:last-child{margin-bottom:0;}
+.r-proj__h{font-size:13.5px;}
+.r-proj__name{font-weight:700;color:var(--ink);}
+.r-proj__stack{color:var(--blue);font-weight:600;}
+.r-proj__desc{font-size:12.8px;color:#333;margin-top:2px;line-height:1.5;}
+
+/* edu */
+.r-edu{font-size:13.5px;}
+.r-edu__deg{font-weight:700;}
+.r-edu__line{margin-top:5px;font-size:13px;}
+.r-edu__line b{color:var(--ink);}
+
+@media(max-width:740px){
+  .sheet{width:100%;margin:0;padding:7vw 6vw;box-shadow:none;min-height:0;}
+  .r-job__top{flex-direction:column;gap:1px;}
+}
+
+/* ---- print ---- */
+@media print{
+  @page{size:letter;margin:0;}
+  html,body{background:#fff;}
+  .toolbar{display:none;}
+  .sheet{width:auto;margin:0;padding:0.5in 0.6in;box-shadow:none;min-height:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html" class="toolbar__back">← back to site</a>
+  <button class="toolbar__btn" onclick="window.print()">⤓ Download / Print PDF</button>
+</div>
+
+<main class="sheet">
+  <header>
+    <h1 class="r-name">BRANDON VIDAURRE</h1>
+    <div class="r-role">Cloud &amp; Infrastructure Engineer&nbsp; ·&nbsp; AWS &amp; Azure&nbsp; ·&nbsp; Networking &amp; Security&nbsp; ·&nbsp; IaC / Automation</div>
+    <div class="r-contact">
+      San Antonio, TX<span class="sep">|</span><a href="/cdn-cgi/l/email-protection#aac8cddcc3cecbdfd8d8cfeacdc7cbc3c684c9c5c7"><span class="__cf_email__" data-cfemail="dcbebbaab5b8bda9aeaeb99cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a><span class="sep">|</span><a href="https://linkedin.com/in/brandon-vidaurre-bb6384a5" target="_blank" rel="noopener">linkedin.com/in/brandon-vidaurre-bb6384a5</a><span class="sep">|</span><a href="https://github.com/BrandonVidaurre" target="_blank" rel="noopener">github.com/BrandonVidaurre</a><span class="sep">|</span><a href="https://brandonvidaurre.com" target="_blank" rel="noopener">brandonvidaurre.com</a>
+    </div>
+  </header>
+
+  <section class="r-sec">
+    <h2 class="r-sec__h">Professional Summary</h2>
+    <p>Infrastructure engineer with 7+ years of enterprise IT experience and a managed-services (MSP) background that spans networking, Linux/Windows systems, virtualization, and security — operational breadth most cloud-only candidates lack. Designs, migrates, and operates hybrid environments across AWS and Azure, automates provisioning with Terraform, Ansible, Python, and Bash, and builds CI/CD with GitHub Actions. Hands-on with AI/ML-ready infrastructure and edge-to-cloud projects, from MLOps pipelines on AWS to a Gen-AI robotics agent on ESP32. Currently pursuing a BS in AI &amp; Computer Science (WGU, 2027); holds AZ-104, AWS Cloud Practitioner, Security+, and Network+, with AWS Solutions Architect and Juniper JNCIA-Mist AI in progress.</p>
+  </section>
+
+  <section class="r-sec">
+    <h2 class="r-sec__h">Technical Skills</h2>
+    <div class="r-skills">
+      <div class="r-skill"><b>Cloud:</b> AWS (EC2, S3, IAM, VPC, Lambda, SageMaker, CloudWatch, CloudFront, Route 53, ACM)&nbsp; ·&nbsp; Microsoft Azure&nbsp; ·&nbsp; hybrid / multi-cloud design&nbsp; ·&nbsp; landing zones</div>
+      <div class="r-skill"><b>IaC &amp; Automation:</b> Terraform&nbsp; ·&nbsp; Ansible&nbsp; ·&nbsp; Docker&nbsp; ·&nbsp; Kubernetes&nbsp; ·&nbsp; GitHub Actions&nbsp; ·&nbsp; CI/CD pipelines</div>
+      <div class="r-skill"><b>Programming:</b> Python&nbsp; ·&nbsp; Bash / Shell&nbsp; ·&nbsp; PowerShell&nbsp; ·&nbsp; Node.js&nbsp; ·&nbsp; PHP&nbsp; ·&nbsp; MicroPython</div>
+      <div class="r-skill"><b>Networking:</b> TCP/IP&nbsp; ·&nbsp; DNS&nbsp; ·&nbsp; TLS&nbsp; ·&nbsp; VLANs&nbsp; ·&nbsp; VPN&nbsp; ·&nbsp; load balancing&nbsp; ·&nbsp; Cisco&nbsp; ·&nbsp; HPE Aruba&nbsp; ·&nbsp; Juniper Mist (AIOps)</div>
+      <div class="r-skill"><b>Security:</b> Zero Trust&nbsp; ·&nbsp; IAM&nbsp; ·&nbsp; network segmentation&nbsp; ·&nbsp; SIEM&nbsp; ·&nbsp; firewall&nbsp; ·&nbsp; VPN&nbsp; ·&nbsp; security compliance</div>
+      <div class="r-skill"><b>Systems &amp; Virtualization:</b> RHEL&nbsp; ·&nbsp; Windows Server&nbsp; ·&nbsp; VMware vSphere&nbsp; ·&nbsp; Hyper-V&nbsp; ·&nbsp; Active Directory&nbsp; ·&nbsp; Linux administration</div>
+      <div class="r-skill"><b>Monitoring &amp; Ops:</b> Grafana&nbsp; ·&nbsp; Prometheus&nbsp; ·&nbsp; CloudWatch&nbsp; ·&nbsp; ITIL&nbsp; ·&nbsp; incident management&nbsp; ·&nbsp; SLA adherence&nbsp; ·&nbsp; RCA</div>
+      <div class="r-skill"><b>AI / ML:</b> SageMaker&nbsp; ·&nbsp; MLOps pipelines&nbsp; ·&nbsp; model versioning &amp; deployment&nbsp; ·&nbsp; edge / on-device inference</div>
+    </div>
+  </section>
+
+  <section class="r-sec">
+    <h2 class="r-sec__h">Professional Experience</h2>
+
+    <div class="r-job">
+      <div class="r-job__top">
+        <span class="r-job__title">Network Systems Administrator</span>
+        <span class="r-job__date">2019 – Present</span>
+      </div>
+      <div class="r-job__org">Intech Southwest (Managed Service Provider)&nbsp; ·&nbsp; San Antonio, TX</div>
+      <ul>
+        <li>Design and operate hybrid cloud environments across AWS and Azure — defining system specs, integration parameters, and security boundaries; cut provisioning cycle time ~40% with standardized IaC templates.</li>
+        <li>Led end-to-end migration of on-premises applications to cloud, including hybrid interconnect design; sustained 99.9% SLA compliance across migrated workloads.</li>
+        <li>Serve as internal cloud advisor to stakeholders; built a cost-optimization framework using on-demand scaling and pay-for-use modeling that reduced infrastructure spend ~25%.</li>
+        <li>Partnered with IT Security to implement SIEM and enforce Zero Trust across cloud and on-prem, reducing mean time to detect (MTTD) by ~30%.</li>
+        <li>Authored Terraform and Ansible automation plus Python/Bash scripting to provision and manage resources, cutting manual provisioning time ~60%.</li>
+        <li>Built and maintained GitHub Actions CI/CD pipelines for infrastructure and application workloads, decreasing deployment errors ~35%.</li>
+        <li>Administer RHEL and Windows Server across 500+ endpoints; manage VMware vSphere VM lifecycle, resource allocation, and disaster-recovery runbooks.</li>
+        <li>Perform capacity planning and root-cause analysis on mission-critical workloads; resolved 100% of P1 incidents within SLA with documented corrective actions.</li>
+      </ul>
+    </div>
+
+    <div class="r-job">
+      <div class="r-job__top">
+        <span class="r-job__title">IT Infrastructure Technician</span>
+        <span class="r-job__date">2016 – 2019</span>
+      </div>
+      <div class="r-job__org">Managed Services / Field Support</div>
+      <ul>
+        <li>Supported hardware, OS, and application environments across Windows Server and Linux; configured Cisco and HPE Aruba switching, routing, and wireless for enterprise clients.</li>
+        <li>Resolved Tier 2–3 escalations within SLA targets; partnered cross-functionally to deliver infrastructure aligned to business requirements.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="r-sec">
+    <h2 class="r-sec__h">Featured Projects</h2>
+
+    <div class="r-proj">
+      <div class="r-proj__h"><span class="r-proj__name">AWS MLOps Pipeline</span> &nbsp;—&nbsp; <span class="r-proj__stack">AWS · SageMaker · S3 · Lambda · Terraform · Python · GitHub Actions</span></div>
+      <div class="r-proj__desc">End-to-end architecture for ML training and inference; automated model versioning and deployment via CI/CD and integrated SageMaker with S3 and Lambda for scalable, cost-efficient inference — cutting deployment time from hours to under 10 minutes.</div>
+    </div>
+
+    <div class="r-proj">
+      <div class="r-proj__h"><span class="r-proj__name">Gen-AI Robotics Agent (Edge-to-Cloud)</span> &nbsp;—&nbsp; <span class="r-proj__stack">ESP32 · MicroPython · computer vision · cloud GenAI APIs</span></div>
+      <div class="r-proj__desc">Built an autonomous robotics agent on ESP32 with modular MicroPython firmware spanning personality, movement, vision, chess, and speaker subsystems — pairing on-device control with cloud generative-AI inference to demonstrate an edge-to-cloud ML workflow.</div>
+    </div>
+
+    <div class="r-proj">
+      <div class="r-proj__h"><span class="r-proj__name">Raspberry Pi Wi-Fi Survey Tool</span> &nbsp;—&nbsp; <span class="r-proj__stack">Raspberry Pi · Python · Linux · 802.11 / RF</span></div>
+      <div class="r-proj__desc">Developed a portable Raspberry Pi tool for on-site wireless site surveys — capturing signal strength and coverage data to support enterprise network assessments and AP placement during field infrastructure work.</div>
+    </div>
+
+    <div class="r-proj">
+      <div class="r-proj__h"><span class="r-proj__name">Cloud Portfolio Site</span> &nbsp;—&nbsp; <span class="r-proj__stack">AWS S3 · CloudFront · Route 53 · ACM · GitHub Actions</span></div>
+      <div class="r-proj__desc">Static site deployed on AWS with automated CI/CD, TLS via ACM, and DNS via Route 53; achieved sub-100ms global load times through CloudFront with full ownership from architecture through security to delivery.</div>
+    </div>
+  </section>
+
+  <section class="r-sec">
+    <h2 class="r-sec__h">Education &amp; Certifications</h2>
+    <div class="r-edu">
+      <div class="r-edu__top r-job__top">
+        <span class="r-edu__deg">BS, Artificial Intelligence &amp; Computer Science — Western Governors University</span>
+        <span class="r-job__date">Expected March 2027</span>
+      </div>
+      <div class="r-edu__line"><b>Certified:</b> Microsoft Azure Administrator (AZ-104)&nbsp; ·&nbsp; AWS Certified Cloud Practitioner&nbsp; ·&nbsp; CompTIA Security+&nbsp; ·&nbsp; CompTIA Network+</div>
+      <div class="r-edu__line"><b>In Progress:</b> AWS Solutions Architect – Associate (SAA-C03)&nbsp; ·&nbsp; Juniper JNCIA-Mist AI (JN0-253)</div>
+    </div>
+  </section>
+</main>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
