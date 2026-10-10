@@ -722,6 +722,12 @@ body::after {
 }
 .bv-badge--phos { background:var(--accent); color:#fff; }
 .bv-badge--amber { background:var(--amber); color:#1a0e00; }
+/* clickable card: full-card link overlay */
+.bv-card--link { cursor:pointer; }
+.bv-card__link { position:absolute; inset:0; z-index:2; }
+.bv-card__link:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+.bv-card__cta { font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em; }
+.bv-card--link:hover .bv-card__cta { color:var(--cyan); }
 
 /* =====================================================
    VLOG — CRT TV teaser
@@ -1080,7 +1086,7 @@ body::after {
         <a href="#contact" class="bv-btn bv-btn--outline">MESSAGE</a>
       </div>
       <div class="bv-hero__stats anim-5">
-        <div class="bv-stat"><div class="bv-stat__n">3</div><div class="bv-stat__l">PROJECTS WIP</div></div>
+        <div class="bv-stat"><div class="bv-stat__n">2</div><div class="bv-stat__l">PROJECTS SHIPPED</div></div>
         <div class="bv-stat"><div class="bv-stat__n">0</div><div class="bv-stat__l">VLOG EPISODES</div></div>
         <div class="bv-stat"><div class="bv-stat__n">7</div><div class="bv-stat__l">YEARS IN ORBIT</div></div>
       </div>
@@ -1130,13 +1136,16 @@ body::after {
         <span class="bv-badge bv-badge--phos">WIP</span>
       </div>
     </article>
-    <article class="bv-card">
+    <article class="bv-card bv-card--feat bv-card--link">
+      <a class="bv-card__link" href="https://github.com/BrandonVidaurre" target="_blank" rel="noopener noreferrer" aria-label="ai companion handheld on GitHub"></a>
+      <span class="bv-card__featured">★ NEW BUILD</span>
       <div class="bv-eyebrow">PROJECT_002</div>
-      <h3 class="bv-card__title">ai portable game emulator </h3>
-      <p class="bv-card__desc">coming soon...</p>
+      <h3 class="bv-card__title">ai companion handheld</h3>
+      <p class="bv-card__desc">a pocket-sized ai companion. raspberry pi cm4 inside a gpi case 2 — portable, self-contained, and finally finished.</p>
+      <span class="bv-card__cta">VIEW ON GITHUB →</span>
       <div class="bv-card__foot">
-        <div class="bv-card__tags"><span class="bv-tag">python</span><span class="bv-tag">raspberry pi</span></div>
-        <span class="bv-badge bv-badge--phos">WIP</span>
+        <div class="bv-card__tags"><span class="bv-tag">raspberry pi cm4</span><span class="bv-tag">python</span><span class="bv-tag">ai</span></div>
+        <span class="bv-badge bv-badge--amber">DONE</span>
       </div>
     </article>
     <article class="bv-card">
@@ -1148,8 +1157,7 @@ body::after {
         <span class="bv-badge bv-badge--phos">WIP</span>
       </div>
     </article>
-    <article class="bv-card bv-card--feat">
-      <span class="bv-card__featured">★ FEATURED</span>
+    <article class="bv-card">
       <div class="bv-eyebrow">PROJECT_004</div>
       <h3 class="bv-card__title">website</h3>
       <p class="bv-card__desc">this website. yes, it's a project. yes, that's allowed.</p>
